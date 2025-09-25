@@ -4,7 +4,7 @@
 
 ## 🚀 在线体验
 
-[点击这里在线使用](https://your-username.github.io/attendance-calculator)
+[点击这里在线使用](https://stack3mpty.github.io/attendance-calculator)
 
 ## ✨ 功能特点
 
@@ -54,7 +54,7 @@
 ### 方法二：在线部署
 1. Fork 本仓库
 2. 在 GitHub Pages 设置中启用 Pages
-3. 访问 `https://stack3mpty.github.io/attendance-calculator`
+3. 访问 `https://your-githubname.github.io/attendance-calculator`
 
 ## 📝 更新日志
 
