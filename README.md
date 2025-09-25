@@ -54,7 +54,7 @@
 ### 方法二：在线部署
 1. Fork 本仓库
 2. 在 GitHub Pages 设置中启用 Pages
-3. 访问 `https://你的用户名.github.io/attendance-calculator`
+3. 访问 `https://stack3mpty.github.io/attendance-calculator`
 
 ## 📝 更新日志
 
@@ -95,7 +95,7 @@ MIT License
 
 如有问题或建议，请通过以下方式联系：
 - 提交 GitHub Issue
-- 发送邮件至：your-email@example.com
+- 发送邮件至：stack3mpty@gmail.com
 
 ---
 
