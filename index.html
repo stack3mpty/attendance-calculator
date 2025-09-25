@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>考勤计算器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>考勤计算器</h1>
+            <p class="subtitle">计算剩余工作日打卡时长</p>
+        </header>
+        
+        <main>
+            <div class="settings-section">
+                <div class="settings-header">
+                    <h3>考勤设置</h3>
+                    <button id="applySettingsBtn" class="settings-btn">应用</button>
+                </div>
+                <div class="settings-row">
+                    <div class="setting-item">
+                        <label for="customWorkDays">工作天数</label>
+                        <input type="number" id="customWorkDays" min="1" max="31" value="22" placeholder="22">
+                        <span class="unit">天</span>
+                    </div>
+                    <div class="setting-item">
+                        <label for="customAvgHours">平均工时</label>
+                        <div class="time-input-compact">
+                            <input type="number" id="customAvgHours" min="0" max="23" value="9" placeholder="9">
+                            <span class="time-separator">:</span>
+                            <input type="number" id="customAvgMinutes" min="0" max="59" value="30" placeholder="30">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="workedDays">已工作天数</label>
+                    <input type="number" id="workedDays" min="1" max="22" placeholder="请输入已工作天数">
+                    <span class="unit">天</span>
+                </div>
+                
+                <div class="input-group">
+                    <label for="avgHours">当前平均打卡时长</label>
+                    <div class="time-input-group">
+                        <input type="number" id="avgHours" min="0" max="23" placeholder="小时">
+                        <span class="time-separator">:</span>
+                        <input type="number" id="avgMinutes" min="0" max="59" placeholder="分钟">
+                    </div>
+                </div>
+                
+                <button id="calculateBtn" class="calculate-btn">计算</button>
+            </div>
+            
+            <div class="manual-calc-section">
+                <h3>手动计算模式</h3>
+                <p class="manual-desc">指定剩余工作天数，计算每天需要打卡时长</p>
+                
+                <div class="input-group">
+                    <label for="manualDays">指定剩余工作天数</label>
+                    <input type="number" id="manualDays" min="1" max="22" placeholder="请输入天数">
+                    <span class="unit">天</span>
+                </div>
+                
+                <button id="manualCalculateBtn" class="calculate-btn secondary">手动计算</button>
+            </div>
+            
+            <div class="result-section" id="resultSection" style="display: none;">
+                <h3>计算结果</h3>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <span class="label">剩余工作天数</span>
+                        <span class="value" id="remainingDays">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">已累计工时</span>
+                        <span class="value" id="accumulatedHours">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">剩余需要工时</span>
+                        <span class="value" id="remainingHours">-</span>
+                    </div>
+                    <div class="result-item highlight">
+                        <span class="label">每日需要打卡</span>
+                        <span class="value" id="dailyRequiredHours">-</span>
+                    </div>
+                </div>
+                <div class="status" id="status"></div>
+            </div>
+            
+            <div class="manual-result-section" id="manualResultSection" style="display: none;">
+                <h3>手动计算结果</h3>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <span class="label">指定工作天数</span>
+                        <span class="value" id="manualSpecifiedDays">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">剩余需要工时</span>
+                        <span class="value" id="manualRemainingHours">-</span>
+                    </div>
+                    <div class="result-item highlight">
+                        <span class="label">每日需要打卡</span>
+                        <span class="value" id="manualDailyHours">-</span>
+                    </div>
+                </div>
+                <div class="status" id="manualStatus"></div>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="info">
+                <p id="monthlyStandard">月度标准：22天 × 9小时30分钟 = 209小时</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
